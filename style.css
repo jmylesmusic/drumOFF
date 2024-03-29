@@ -1,0 +1,1161 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tauri&display=swap");
+
+:root {
+  /* Theme Colors */
+  --bodycolor1: #ffaf45;
+  --bodycolor2: #fb6d48;
+  --bodycolor3: #d74b76;
+  --bodycolor4: #673f69;
+  /* Instrument Colors */
+  --instcolor1: #ff595e;
+  --instcolor2: #ff924c;
+  --instcolor3: #ffca3a;
+  --instcolor4: #c5ca30;
+  --instcolor5: #8ac926;
+  --instcolor6: #52a675;
+  --instcolor7: #1982c4;
+  --instcolor8: #4267ac;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+body {
+  background: linear-gradient(90deg, var(--bodycolor1), var(--bodycolor4));
+  font-family: "Monoton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* HOME SCREEN */
+.warning-label {
+  display: none;
+}
+
+.game-title-screen {
+  position: absolute;
+  display: block;
+  justify-content: center;
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  width: 800px;
+  height: 1000px;
+  background-color: #161616;
+  border: 3px solid var(--bodycolor3);
+  animation: fadein;
+  animation-duration: 1s;
+}
+
+#intro-image {
+  position: absolute;
+  display: block;
+  height: auto;
+  width: 800px;
+}
+
+#home-screen-title {
+  position: absolute;
+  display: block;
+  text-align: center;
+  left: 20px;
+  z-index: 1;
+}
+
+#drum-image {
+  display: block;
+  position: absolute;
+  top: 505px;
+  left: 0px;
+}
+
+#mode-button-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  height: 400px;
+  bottom: 20px;
+  z-index: 1;
+}
+
+#mode-button-container > div {
+  font-size: 40px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#mode-button-container > div:hover {
+  color: var(--bodycolor3);
+}
+
+.instructions-list {
+  position: absolute;
+  display: none;
+  opacity: 1;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-family: Tauri;
+  width: 700px;
+  height: 800px;
+  background-color: var(--bodycolor2);
+  top: 100px;
+  left: 50px;
+  border-radius: 12px;
+  animation: fadein;
+  animation-duration: 1s;
+}
+#game-description {
+  font-size: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+#keyboard-map {
+  width: 650px;
+}
+
+#x {
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  text-align: right;
+  display: block;
+  margin-right: 10px;
+  margin-top: 0px;
+  font-size: 24px;
+}
+
+#x:hover {
+  color: var(--bodycolor3);
+  cursor: pointer;
+}
+
+/* GAMEPLAY */
+.game-container {
+  position: absolute;
+  display: none;
+  width: 800px;
+  height: 1000px;
+  background-color: var(--bodycolor4);
+  border: 3px solid var(--bodycolor3);
+  color: white;
+  animation: fadein;
+  animation-duration: 1s;
+}
+
+#game-title {
+  position: absolute;
+  display: block;
+  top: 20px;
+  left: 20px;
+  color: white;
+  z-index: 1;
+}
+
+#game-title:hover {
+  color: var(--bodycolor2);
+  cursor: pointer;
+}
+
+#strobe-lights {
+  position: absolute;
+  display: block;
+  width: 800px;
+  height: auto;
+  animation: fadein;
+  animation-duration: 2s;
+}
+
+#studio-image {
+  position: absolute;
+  display: block;
+  width: 800px;
+  height: auto;
+  animation: fadein;
+  animation-duration: 2s;
+}
+
+#collide-box {
+  position: absolute;
+  display: block;
+  top: 390px;
+  left: 0px;
+  width: 800px;
+  height: 32px;
+  background-color: white;
+  opacity: 0;
+}
+
+.drum-button-container {
+  position: absolute;
+  display: none;
+  align-items: center;
+  font-family: "Tauri", sans-serif;
+  font-size: 14px;
+}
+
+.drum-button-container > div {
+  display: block;
+  border: 1px solid white;
+}
+
+.drum-button-container > div:hover {
+  cursor: pointer;
+}
+
+/* RAILS */
+.rails-container {
+  position: absolute;
+  display: block;
+  top: -50px;
+  left: 0px;
+  padding: 0px;
+}
+
+#hi-hat-rail {
+  position: absolute;
+  height: 330px;
+  width: 5px;
+  background-color: var(--instcolor1);
+  left: 50px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#crash-cymbal-rail {
+  position: absolute;
+  height: 330px;
+  width: 5px;
+  background-color: var(--instcolor2);
+  left: 150px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#snare-drum-rail {
+  position: absolute;
+  height: 330px;
+  width: 5px;
+  background-color: var(--instcolor3);
+  left: 250px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#kick-drum-rail {
+  position: absolute;
+  height: 330px;
+  width: 5px;
+  background-color: var(--instcolor4);
+  left: 350px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#hi-tom-rail {
+  position: absolute;
+  height: 330px;
+  width: 5px;
+  background-color: var(--instcolor5);
+  left: 450px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#mid-tom-rail {
+  position: absolute;
+  height: 330px;
+  width: 5px;
+  background-color: var(--instcolor6);
+  left: 550px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#low-tom-rail {
+  position: absolute;
+  height: 330px;
+  width: 5px;
+  background-color: var(--instcolor7);
+  left: 650px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#ride-cymbal-rail {
+  position: absolute;
+  height: 330px;
+  width: 5px;
+  background-color: var(--instcolor8);
+  left: 750px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+/* EVENTS */
+#hi-hat-event {
+  position: absolute;
+  display: none;
+  border-radius: 5px;
+  height: 20px;
+  width: 50px;
+  background: linear-gradient(
+    45deg,
+    #ffb2b4 0%,
+    var(--instcolor1) 18%,
+    var(--instcolor1) 82%,
+    #ffb2b4 100%
+  );
+  left: 15px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#crash-cymbal-event {
+  position: absolute;
+  display: none;
+  border-radius: 5px;
+  height: 22px;
+  width: 54px;
+  background: linear-gradient(
+    45deg,
+    #ffc5a0 0%,
+    var(--instcolor2) 18%,
+    var(--instcolor2) 82%,
+    #ffc5a0 100%
+  );
+  left: 127px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#snare-drum-event {
+  position: absolute;
+  display: none;
+  border-radius: 5px;
+  height: 20px;
+  width: 50px;
+  background: linear-gradient(
+    45deg,
+    #ffe498 0%,
+    var(--instcolor3) 18%,
+    var(--instcolor3) 82%,
+    #ffe498 100%
+  );
+  left: 227px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#kick-drum-event {
+  position: absolute;
+  display: none;
+  border-radius: 5px;
+  height: 20px;
+  width: 50px;
+  background: linear-gradient(
+    45deg,
+    #eff37e 0%,
+    var(--instcolor4) 18%,
+    var(--instcolor4) 82%,
+    #eff37e 100%
+  );
+  left: 327px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#hi-tom-event {
+  position: absolute;
+  display: none;
+  border-radius: 5px;
+  height: 20px;
+  width: 50px;
+  background: linear-gradient(
+    45deg,
+    #cfddb9 0%,
+    var(--instcolor5) 18%,
+    var(--instcolor5) 82%,
+    #cfddb9 100%
+  );
+  left: 427px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#mid-tom-event {
+  position: absolute;
+  display: none;
+  border-radius: 5px;
+  height: 20px;
+  width: 50px;
+  background: linear-gradient(
+    45deg,
+    #9bc4ac 0%,
+    var(--instcolor6) 18%,
+    var(--instcolor6) 82%,
+    #9bc4ac 100%
+  );
+  left: 527px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#low-tom-event {
+  position: absolute;
+  display: none;
+  border-radius: 5px;
+  height: 20px;
+  width: 50px;
+  background: linear-gradient(
+    45deg,
+    #9bc4ac 0%,
+    var(--instcolor7) 18%,
+    var(--instcolor7) 82%,
+    #9bc4ac 100%
+  );
+  left: 627px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+#ride-cymbal-event {
+  position: absolute;
+  display: none;
+  border-radius: 5px;
+  height: 20px;
+  width: 50px;
+  background: linear-gradient(
+    45deg,
+    #9bc4ac 0%,
+    var(--instcolor8) 18%,
+    var(--instcolor8) 82%,
+    #9bc4ac 100%
+  );
+  left: 727px;
+  top: 120px;
+  border: 1px solid white;
+}
+
+/* WRAPPERS */
+#hi-hat-wrapper {
+  position: absolute;
+  border-radius: 5px;
+  height: 22px;
+  width: 54px;
+  background: linear-gradient(
+    45deg,
+    #ffb2b4 0%,
+    var(--instcolor1) 18%,
+    var(--instcolor1) 82%,
+    #ffb2b4 100%
+  );
+  left: 25px;
+  top: 401px;
+  opacity: 0.75;
+  border: 2px solid white;
+}
+
+#crash-cymbal-wrapper {
+  position: absolute;
+  border-radius: 5px;
+  height: 22px;
+  width: 54px;
+  background: linear-gradient(
+    45deg,
+    #ffc5a0 0%,
+    var(--instcolor2) 18%,
+    var(--instcolor2) 82%,
+    #ffc5a0 100%
+  );
+  left: 125px;
+  top: 401px;
+  opacity: 0.75;
+  border: 2px solid white;
+}
+
+#snare-drum-wrapper {
+  position: absolute;
+  border-radius: 5px;
+  height: 22px;
+  width: 54px;
+  background: linear-gradient(
+    45deg,
+    #ffe498 0%,
+    var(--instcolor3) 18%,
+    var(--instcolor3) 82%,
+    #ffe498 100%
+  );
+  left: 225px;
+  top: 401px;
+  opacity: 0.75;
+  border: 2px solid white;
+}
+
+#kick-drum-wrapper {
+  position: absolute;
+  border-radius: 5px;
+  height: 22px;
+  width: 54px;
+  background: linear-gradient(
+    45deg,
+    #eff37e 0%,
+    var(--instcolor4) 18%,
+    var(--instcolor4) 82%,
+    #eff37e 100%
+  );
+  left: 325px;
+  top: 401px;
+  opacity: 0.75;
+  border: 2px solid white;
+}
+
+#hi-tom-wrapper {
+  position: absolute;
+  border-radius: 5px;
+  height: 22px;
+  width: 54px;
+  background: linear-gradient(
+    45deg,
+    #cfddb9 0%,
+    var(--instcolor5) 18%,
+    var(--instcolor5) 82%,
+    #cfddb9 100%
+  );
+  left: 425px;
+  top: 401px;
+  opacity: 0.75;
+  border: 2px solid white;
+}
+
+#mid-tom-wrapper {
+  position: absolute;
+  border-radius: 5px;
+  height: 22px;
+  width: 54px;
+  background: linear-gradient(
+    45deg,
+    #9bc4ac 0%,
+    var(--instcolor6) 18%,
+    var(--instcolor6) 82%,
+    #9bc4ac 100%
+  );
+  left: 525px;
+  top: 401px;
+  opacity: 0.75;
+  border: 2px solid white;
+}
+
+#low-tom-wrapper {
+  position: absolute;
+  border-radius: 5px;
+  height: 22px;
+  width: 54px;
+  background: linear-gradient(
+    45deg,
+    #9bc4ac 0%,
+    var(--instcolor7) 18%,
+    var(--instcolor7) 82%,
+    #9bc4ac 100%
+  );
+  left: 625px;
+  top: 401px;
+  opacity: 0.75;
+  border: 2px solid white;
+}
+
+#ride-cymbal-wrapper {
+  position: absolute;
+  border-radius: 5px;
+  height: 22px;
+  width: 54px;
+  background: linear-gradient(
+    45deg,
+    #9bc4ac 0%,
+    var(--instcolor8) 18%,
+    var(--instcolor8) 82%,
+    #9bc4ac 100%
+  );
+  left: 725px;
+  top: 401px;
+  opacity: 0.75;
+  border: 2px solid white;
+}
+/* WRAPPER LIGHTS */
+.drum-light-wrapper-container {
+  text-align: center;
+  font-family: Tauri;
+  color: white;
+}
+
+#hi-hat-wrapper-light {
+  position: absolute;
+  display: block;
+  border-radius: 5px;
+  height: 19px;
+  width: 53px;
+  left: 23px;
+  top: 400px;
+  opacity: 0;
+  border: 4px solid whitesmoke;
+}
+
+#crash-cymbal-wrapper-light {
+  position: absolute;
+  display: block;
+  border-radius: 5px;
+  height: 19px;
+  width: 53px;
+  left: 123px;
+  top: 400px;
+  opacity: 0;
+  border: 4px solid whitesmoke;
+}
+
+#snare-drum-wrapper-light {
+  position: absolute;
+  display: block;
+  border-radius: 5px;
+  height: 19px;
+  width: 53px;
+  left: 223px;
+  top: 400px;
+  opacity: 0;
+  border: 4px solid whitesmoke;
+}
+
+#kick-drum-wrapper-light {
+  position: absolute;
+  display: block;
+  border-radius: 5px;
+  height: 19px;
+  width: 53px;
+  left: 323px; /* Increased by 100 */
+  top: 400px;
+  opacity: 0;
+  border: 4px solid whitesmoke;
+}
+
+#hi-tom-wrapper-light {
+  position: absolute;
+  display: block;
+  border-radius: 5px;
+  height: 19px;
+  width: 53px;
+  left: 423px; /* Increased by 100 */
+  top: 400px;
+  opacity: 0;
+  border: 4px solid whitesmoke;
+}
+
+#mid-tom-wrapper-light {
+  position: absolute;
+  display: block;
+  border-radius: 5px;
+  height: 19px;
+  width: 53px;
+  left: 523px; /* Increased by 100 */
+  top: 400px;
+  opacity: 0;
+  border: 4px solid whitesmoke;
+}
+
+#low-tom-wrapper-light {
+  position: absolute;
+  display: block;
+  border-radius: 5px;
+  height: 19px;
+  width: 53px;
+  left: 623px; /* Increased by 100 */
+  top: 400px;
+  opacity: 0;
+  border: 4px solid whitesmoke;
+}
+
+#ride-cymbal-wrapper-light {
+  position: absolute;
+  display: block;
+  border-radius: 5px;
+  height: 19px;
+  width: 53px;
+  left: 723px; /* Increased by 100 */
+  top: 400px;
+  opacity: 0;
+  border: 4px solid whitesmoke;
+}
+
+/* DRUM LIGHTS */
+#hi-hat-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  top: 798px;
+  left: 105px;
+  background-color: var(--instcolor1);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#crash-cymbal-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  left: 150px;
+  top: 706px;
+  background-color: var(--instcolor2);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#snare-drum-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  left: 170px;
+  top: 776px;
+  background-color: var(--instcolor3);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#hi-tom-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  left: 216px;
+  top: 696px;
+  background-color: var(--instcolor4);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#kick-drum-light {
+  display: block;
+  position: absolute;
+  height: 18px;
+  width: 48px;
+  border-radius: 50%;
+  left: 243px;
+  top: 740px;
+  background-color: var(--instcolor5);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#mid-tom-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  left: 296px;
+  top: 705px;
+  background-color: var(--instcolor6);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#low-tom-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  left: 356px;
+  top: 775px;
+  background-color: var(--instcolor7);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#ride-cymbal-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  left: 371px;
+  top: 705px;
+  background-color: var(--instcolor8);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#floor-tom {
+  display: none;
+}
+
+.information-container {
+  display: block;
+  position: absolute;
+  font-family: Tauri;
+  top: 520px;
+  right: 0px;
+  font-size: 20px;
+  width: 200px;
+}
+
+#level {
+  font-family: "Monoton", sans-serif;
+}
+
+#next-level {
+  position: absolute;
+  display: none;
+  text-align: center;
+  background-color: var(--bodycolor3);
+  border-radius: 2px;
+  width: 150px;
+  top: 180px;
+  right: 50px;
+  padding: 20px 0;
+  animation: fadein;
+  animation-duration: 1s;
+}
+
+#next-level:hover {
+  background-color: var(--bodycolor2);
+  cursor: pointer;
+}
+
+#retry-level {
+  position: absolute;
+  display: none;
+  text-align: center;
+  background-color: var(--bodycolor3);
+  border-radius: 2px;
+  width: 150px;
+  top: 280px;
+  right: 50px;
+  padding: 20px 0;
+  animation: fadein;
+  animation-duration: 1s;
+}
+
+#retry-level:hover {
+  background-color: var(--bodycolor2);
+  cursor: pointer;
+}
+
+.count-in {
+  font-size: 240px;
+  color: white;
+}
+
+#one {
+  position: absolute;
+  display: none;
+  align-content: center;
+  text-align: center;
+  background-color: #161616;
+  border-radius: 50%;
+  left: 0px;
+  top: 0px;
+  width: 200px;
+  height: 450px;
+  z-index: 2;
+}
+
+#two {
+  position: absolute;
+  display: none;
+  align-content: center;
+  text-align: center;
+  background-color: #161616;
+  border-radius: 50%;
+  left: 200px;
+  top: 0px;
+  width: 200px;
+  height: 450px;
+  z-index: 2;
+}
+
+#three {
+  position: absolute;
+  display: none;
+  align-content: center;
+  text-align: center;
+  background-color: #161616;
+  border-radius: 50%;
+  left: 400px;
+  top: 0px;
+  width: 200px;
+  height: 450px;
+  z-index: 2;
+}
+
+#four {
+  position: absolute;
+  display: none;
+  align-content: center;
+  text-align: center;
+  background-color: #161616;
+  border-radius: 50%;
+  left: 600px;
+  top: 0px;
+  width: 200px;
+  height: 450px;
+  z-index: 2;
+}
+
+.reviews div {
+  position: absolute;
+  display: none;
+  text-align: center;
+  align-content: center;
+  font-family: Tauri;
+  top: 100px;
+  left: 200px;
+  width: 400px;
+  height: 200px;
+  background-color: var(--bodycolor1);
+  font-size: 25px;
+  color: white;
+  z-index: 2;
+  border-radius: 5px;
+}
+
+/* FREE JAM MODE */
+
+.free-jam-container {
+  position: absolute;
+  display: none;
+  width: 800px;
+  height: 1000px;
+  border: 2px solid var(--bodycolor1);
+  animation: fadein;
+  animation-duration: 1s;
+}
+
+#jam-studio-image {
+  position: absolute;
+  width: 800px;
+  top: 0;
+}
+#jam-drum-image {
+  position: absolute;
+  top: 475px;
+  left: 125px;
+}
+
+#jam-game-title {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  color: white;
+  z-index: 1;
+}
+
+#jam-game-title:hover {
+  color: var(--bodycolor2);
+  cursor: pointer;
+}
+
+#jam-hi-hat-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  top: 768px; /* Adjusted */
+  left: 230px; /* Adjusted */
+  background-color: var(--instcolor1);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#jam-crash-cymbal-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  top: 676px; /* Adjusted */
+  left: 275px; /* Adjusted */
+  background-color: var(--instcolor2);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#jam-snare-drum-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  top: 746px; /* Adjusted */
+  left: 295px; /* Adjusted */
+  background-color: var(--instcolor3);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#jam-hi-tom-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  top: 666px; /* Adjusted */
+  left: 341px; /* Adjusted */
+  background-color: var(--instcolor4);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#jam-kick-drum-light {
+  display: block;
+  position: absolute;
+  height: 18px;
+  width: 48px;
+  border-radius: 50%;
+  top: 710px; /* Adjusted */
+  left: 368px; /* Adjusted */
+  background-color: var(--instcolor5);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#jam-mid-tom-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  top: 675px; /* Adjusted */
+  left: 421px; /* Adjusted */
+  background-color: var(--instcolor6);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#jam-low-tom-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  top: 745px; /* Adjusted */
+  left: 481px; /* Adjusted */
+  background-color: var(--instcolor7);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+#jam-ride-cymbal-light {
+  display: block;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  top: 675px; /* Adjusted */
+  left: 496px; /* Adjusted */
+  background-color: var(--instcolor8);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+/* Game Over Menu */
+#game-over-box {
+  position: absolute;
+  display: block;
+  opacity: 1;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-family: Tauri;
+  width: 600px;
+  height: 600px;
+  background-color: var(--bodycolor2);
+  top: 200px;
+  left: 100px;
+  border-radius: 12px;
+  animation: fadein;
+  animation-duration: 1s;
+}
+
+#game-over-box p {
+  padding: 20px;
+}
+
+#return-home:hover {
+  color: var(--bodycolor4);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px), (max-height: 1000px) {
+  .game-title-screen {
+    display: none;
+  }
+
+  .game-container {
+    display: none;
+  }
+
+  .information-container {
+    display: none;
+  }
+
+  .free-jam-container {
+    display: none;
+  }
+
+  #strobe-lights {
+    display: none;
+  }
+
+  #game-title {
+    display: none;
+  }
+
+  .rails-container {
+    display: none;
+  }
+
+  .drum-button-container {
+    display: none;
+  }
+
+  .drum-light-wrapper-container {
+    display: none;
+  }
+
+  #drum-image {
+    display: none;
+  }
+
+  .warning-label {
+    display: block;
+    font-family: Tauri;
+    font-size: 2em;
+    text-align: center;
+    color: whitesmoke;
+  }
+}

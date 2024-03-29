@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>drumOFF!</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="warning-label">
+        <p>WARNING:</p>
+        <p>
+          This game requires a screen with at least 800px x 1000px to operate!
+        </p>
+        <p>Please reopen on a full browser window to continue.</p>
+      </div>
+
+      <div class="instructions-list">
+        <div id="x">x</div>
+        <p>Instructions:</p>
+        <p id="game-description">
+          Welcome to drumOFF! Before you start playing, get your hands used to
+          the following configuration:
+        </p>
+        <img id="keyboard-map" src="./images/keyboard-map.png" alt="keyboard" />
+        <p id="game-description">
+          If you don't think you're ready for the stage just yet, you can get
+          your groove on in FreeJam Mode.
+        </p>
+        <p id="game-description">
+          When you're ready to hit the stage, select New Game. Each level will
+          increase in difficulty as you go. Points are awarded for every correct
+          and in-time note you play.
+        </p>
+      </div>
+      <div id="game-over-box">
+        <p>
+          Congratulations! You've made it to the very end! Looks like it's time
+          for you to get on the road and start touring!
+        </p>
+        <p>
+          If you're not ready for that kind of commitment, feel free to play the
+          game again, or rock out on your own in "FreeJam" mode!
+        </p>
+        <br />
+        <br />
+        <p id="return-home">Return to Home Screen</p>
+      </div>
+
+      <div class="game-title-screen">
+        <div id="home-screen-title">drumOFF!</div>
+        <img src="./images/metal-drummer.jpg" id="intro-image" alt="drummer" />
+        <duv id="mode-button-container">
+          <div id="new-game">New Game</div>
+          <div id="free-jam-button">Free Jam</div>
+          <div id="instructions">Instructions</div>
+          <audio autoplay id="theme-music">
+            <source src="./sounds/theme-music.mp3" type="audio/mpeg" />
+          </audio>
+        </duv>
+      </div>
+
+      <div class="free-jam-container">
+        <div id="jam-game-title">drumOFF!</div>
+        <img id="jam-studio-image" src="./images/studio.webp" alt="studio" />
+        <img
+          id="jam-drum-image"
+          src="./images/drumkit-medium.png"
+          alt="drums"
+        />
+        <div class="jam-drum-lights-container">
+          <div id="jam-hi-hat-light"></div>
+          <div id="jam-crash-cymbal-light"></div>
+          <div id="jam-snare-drum-light"></div>
+          <div id="jam-hi-tom-light"></div>
+          <div id="jam-kick-drum-light"></div>
+          <div id="jam-mid-tom-light"></div>
+          <div id="jam-low-tom-light"></div>
+          <div id="jam-ride-cymbal-light"></div>
+        </div>
+      </div>
+
+      <div class="game-container">
+        <div id="game-title">drumOFF!</div>
+        <img id="strobe-lights" src="./images/lights-loop.gif" alt="lights" />
+        <img id="drum-image" src="./images/drumkit-medium.png" alt="drums" />
+
+        <div class="rails-container">
+          <div id="hi-hat-rail"></div>
+          <div id="hi-hat-event"></div>
+          <div id="crash-cymbal-rail"></div>
+          <div id="crash-cymbal-event"></div>
+          <div id="snare-drum-rail"></div>
+          <div id="snare-drum-event"></div>
+          <div id="kick-drum-rail"></div>
+          <div id="kick-drum-event"></div>
+          <div id="hi-tom-rail"></div>
+          <div id="hi-tom-event"></div>
+          <div id="mid-tom-rail"></div>
+          <div id="mid-tom-event"></div>
+          <div id="low-tom-rail"></div>
+          <div id="low-tom-event"></div>
+          <div id="ride-cymbal-rail"></div>
+          <div id="ride-cymbal-event"></div>
+        </div>
+
+        <div id="collide-box"></div>
+
+        <div class="drum-lights-container">
+          <div id="hi-hat-light"></div>
+          <div id="crash-cymbal-light"></div>
+          <div id="snare-drum-light"></div>
+          <div id="kick-drum-light"></div>
+          <div id="hi-tom-light"></div>
+          <div id="mid-tom-light"></div>
+          <div id="low-tom-light"></div>
+          <div id="ride-cymbal-light"></div>
+        </div>
+
+        <div class="drum-button-container">
+          <div id="hi-hat">Hi Hat</div>
+          <div id="crash-cymbal">Crash Cymbal</div>
+          <div id="snare-drum">Snare Drum</div>
+          <div id="kick-drum">Kick Drum</div>
+          <div id="hi-tom">Hi Tom</div>
+          <div id="mid-tom">Mid Tom</div>
+          <div id="low-tom">Low Tom</div>
+          <div id="ride-cymbal">Ride Cymbal</div>
+        </div>
+
+        <div class="drum-light-wrapper-container">
+          <div id="hi-hat-wrapper">A</div>
+          <div id="crash-cymbal-wrapper">S</div>
+          <div id="snare-drum-wrapper">D</div>
+          <div id="kick-drum-wrapper">Space</div>
+          <div id="hi-tom-wrapper">H</div>
+          <div id="mid-tom-wrapper">J</div>
+          <div id="low-tom-wrapper">K</div>
+          <div id="ride-cymbal-wrapper">L</div>
+        </div>
+
+        <div class="drum-wrapper-press-container">
+          <div id="hi-hat-wrapper-light"></div>
+          <div id="crash-cymbal-wrapper-light"></div>
+          <div id="snare-drum-wrapper-light"></div>
+          <div id="kick-drum-wrapper-light"></div>
+          <div id="hi-tom-wrapper-light"></div>
+          <div id="mid-tom-wrapper-light"></div>
+          <div id="low-tom-wrapper-light"></div>
+          <div id="ride-cymbal-wrapper-light"></div>
+        </div>
+
+        <div class="information-container">
+          <div id="level">Level 1</div>
+          <div id="score">Score: 0</div>
+          <!-- <div id="percentage"></div> -->
+          <div id="next-level">Next Level</div>
+          <div id="retry-level">Retry Level</div>
+        </div>
+
+        <div class="reviews">
+          <div id="perfect">
+            Perfect Performance! I hope you were recording!
+          </div>
+          <div id="good">
+            Pretty good! You might go back and it another try!
+          </div>
+          <div id="bad">That was sloppy... You need to try that again!</div>
+        </div>
+
+        <div class="count-in">
+          <div id="one">1</div>
+          <div id="two">2</div>
+          <div id="three">3</div>
+          <div id="four">4</div>
+        </div>
+      </div>
+    </main>
+    <script src="./game.js"></script>
+    <script src="./script.js"></script>
+    <script src="./note.js"></script>
+  </body>
+</html>
